@@ -14,17 +14,6 @@ public class ListAllCategoriesService {
     private CategoryRepository categoryRepository;
 
     public List<CategoryEntity> execute() {
-        var categories = this.categoryRepository.findAll();
-
-        System.out.println("Categories:");
-
-        categories.forEach(category -> {
-            System.out.println("Category: " + category.getName());
-            category.getCourses().forEach(course -> {
-                System.out.println("Course: " + course.getName());
-            });
-        });
-
-        return categories;
+        return this.categoryRepository.findAll();
     }
 }

@@ -1,12 +1,12 @@
 package com.thiagonascimento.course_api.modules.category.entities;
 
-import com.fasterxml.jackson.annotation.JsonManagedReference;
-import com.thiagonascimento.course_api.modules.course.entities.CourseEntity;
-import jakarta.persistence.*;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 
-import java.util.List;
 import java.util.UUID;
 
 @Data
@@ -19,8 +19,4 @@ public class CategoryEntity {
 
     @NotNull(message = "Name is required")
     private String name;
-
-    @OneToMany(mappedBy = "category", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    @JsonManagedReference
-    private List<CourseEntity> courses;
 }
