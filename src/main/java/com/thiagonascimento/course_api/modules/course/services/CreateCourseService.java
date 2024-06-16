@@ -22,7 +22,6 @@ public class CreateCourseService {
         try {
             var course = CourseEntity.builder()
                     .name(courseDTO.getName())
-                    .categoryId(category.getId())
                     .category(category)
                     .active(courseDTO.isActive())
                     .build();
