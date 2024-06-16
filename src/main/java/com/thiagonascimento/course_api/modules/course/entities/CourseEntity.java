@@ -1,5 +1,6 @@
 package com.thiagonascimento.course_api.modules.course.entities;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.thiagonascimento.course_api.modules.category.entities.CategoryEntity;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
@@ -28,6 +29,7 @@ public class CourseEntity {
 
     @ManyToOne()
     @JoinColumn(name = "category_id", nullable = false)
+    @JsonManagedReference
     private CategoryEntity category;
 
     private boolean active;
